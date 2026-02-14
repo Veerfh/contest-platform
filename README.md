@@ -21,12 +21,16 @@ cp .env.example .env
 # 6. Запустить Docker контейнеры (MinIO)
 docker-compose up -d
 
-# 7. Создать bucket в MinIO
+# 7. Создать bucket в MinIO (файл уже есть в корне проекта)
 php create-bucket.php
 
 ```
 
-Адрес MinIO уже прописан в файле env.example как и остальные настройки, при необходимости измените localhost
+Console MinIO будет находиться по этому адресу http://localhost:9001/browser/contests
+
+Данные для входа в MinIO(если понадобится):
+логин: minioadmin
+пароль: minioadmin
 
 ```bash
 
@@ -36,7 +40,7 @@ php artisan migrate --seed
 # 10. Запустить очередь
 php artisan queue:work
 
-# 11. Запустить сервер
+# 11. Запустить сервер(в отдельном терминале)
 php artisan serve
 ```
 
